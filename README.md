@@ -2,6 +2,12 @@
 
 nodeadm is a Node.JS library for [**Amazon Device Messaging for Kindle**](https://developer.amazon.com/appsandservices/apis/engage/device-messaging).
 
+## Notes
+
+ * Automatically performs the OAuth2 access token fetch on `send`
+ * Will re-authenticate itself once the token expires
+ * Loosely based on [node-gcm](https://github.com/ToothlessGear/node-gcm)
+ 
 ## Usage
 
 ```js
@@ -16,42 +22,33 @@ var options = {
 
 var admSender = new adm.Sender();
 
-admSender.authenticate(options, function(err, access_token) {
+var messsage = {
+  data: {
+    message: "Hello"
+  },
+  consolidationKey: "Some Key",
+  expiresAfter: 86400      
+}
+admSender.send(messsage, registration_id, function(err, result) {
   if (err) {
     // No recoverable error
     console.log(err);
     process.exit(1);
     return;
   }
-  if (access_token) {
-    var messsage = {
-      data: {
-        message: "Hello"
-      },
-      consolidationKey: "Some Key",
-      expiresAfter: 86400      
-    }
-    admSender.send(messsage, registration_id, function(err, result) {
-      if (err) {
-        // No recoverable error
-        console.log(err);
-        process.exit(1);
-        return;
-      }
-      if (result.error) {      
-        console.log("Error: " + result.error);
-      } else if (result.registrationID) {
-        console.log("Success, current registration ID: " + result.registrationID);
-      }
-      process.exit(0);
-    })
+  if (result.error) {      
+    console.log("Error: " + result.error);
+  } else if (result.registrationID) {
+    console.log("Success, current registration ID: " + result.registrationID);
   }
+  process.exit(0);
 })
 
 ```
+
 ## Contribute!
 
-Send us a pull request! We would love to get your help.
+Send us a pull request if you see bugs or have suggestions!
 
 ## Licence
 
