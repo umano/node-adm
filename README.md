@@ -2,6 +2,10 @@
 
 node-adm is a Node.JS library for [**Amazon Device Messaging for Kindle**](https://developer.amazon.com/appsandservices/apis/engage/device-messaging).
 
+## Installation
+```bash
+$ npm install node-adm
+```
 ## Notes
 
  * Automatically performs the OAuth2 access token fetch on `send`
