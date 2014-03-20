@@ -1,0 +1,36 @@
+{
+  "name": "adm",
+  "description": "a Node.JS wrapper for Amazon Device Messaging for Kindle devices (ADM)",
+  "version": "0.0.1",
+  "author": {
+    "name": "Anton Lopyrev",
+    "email": "anton@lopyrev.com"
+  },
+  "contributors": [
+    {
+      "name": "Anton Lopyrev",
+      "email": "anton@lopyrev.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/umano/node-adm.git",
+    "web": "http://github.com/umano/node-adm"
+  },
+  "keywords": [
+    "amazon",
+    "push",
+    "notifications",
+    "android",
+    "kindle",
+    "device",
+    "messaging"
+  ],
+  "main": "index",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">= 0.6.0"
+  }
+}

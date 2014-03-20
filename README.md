@@ -1,4 +1,3 @@
-node-adm
-========
+# adm
 
-Node.js Wrapper for Amazon Device Messaging
+adm is a Node.JS library for [**Amazon Device Messaging for Kindle**](https://developer.amazon.com/appsandservices/apis/engage/device-messaging).
