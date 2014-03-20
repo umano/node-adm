@@ -1,6 +1,6 @@
 # node-adm
 
-nodeadm is a Node.JS library for [**Amazon Device Messaging for Kindle**](https://developer.amazon.com/appsandservices/apis/engage/device-messaging).
+node-adm is a Node.JS library for [**Amazon Device Messaging for Kindle**](https://developer.amazon.com/appsandservices/apis/engage/device-messaging).
 
 ## Notes
 
@@ -37,6 +37,7 @@ admSender.send(messsage, registration_id, function(err, result) {
     return;
   }
   if (result.error) {      
+    // ADM Server error such as InvalidRegistrationId
     console.log("Error: " + result.error);
   } else if (result.registrationID) {
     console.log("Success, current registration ID: " + result.registrationID);
